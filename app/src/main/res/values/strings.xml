@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">WorkoutTracker</string>
+    <string name="workout_routine_list">Workout Routine List</string>
+    <string name="back_button">Back</string>
+    <string name="add_workout_routine_title">Add Workout Routine</string>
+    <string name="edit_workout_routine_title">Edit Workout Routine</string>
+    <string name="workout_routine_details_title">Workout Routine Details</string>
+    <string name="no_exercises">You don\'t currently have any workout routines saved.\nTap + to create a new exercise.</string>
+</resources>
