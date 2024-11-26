@@ -15,11 +15,17 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.workouttracker.ui.navigation.WorkoutNavHost
 
+/**
+ * Top level composable that represents screens for the application.
+ */
 @Composable
-fun InventoryApp(navController: NavHostController = rememberNavController()) {
+fun WorkoutTrackerApp(navController: NavHostController = rememberNavController()) {
     WorkoutNavHost(navController = navController)
 }
 
+/**
+ * App bar to display title and conditionally display the back navigation.
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun WorkoutTopAppBar(

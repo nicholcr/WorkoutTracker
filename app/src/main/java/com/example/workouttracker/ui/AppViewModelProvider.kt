@@ -5,7 +5,7 @@ import androidx.lifecycle.viewmodel.CreationExtras
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.workouttracker.ui.home.HomeViewModel
-import com.example.workouttracker.ui.home.WorkoutTrackerApplication
+import com.example.workouttracker.WorkoutTrackerApplication
 import com.example.workouttracker.workout.AddWorkoutRoutineViewModel
 
 object AppViewModelProvider {
