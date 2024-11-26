@@ -17,6 +17,6 @@ class AppDataContainer(private val context: Context) : AppContainer {
      * Implementation for [WorkoutRoutineRepository]
      */
     override val workoutRoutineRepository : WorkoutRoutineRepository by lazy {
-        OfflineWorkoutRoutineRepository()
+        OfflineWorkoutRoutineRepository(WorkoutRoutineDatabase.getDatabase(context).workoutRoutineDao())
     }
 }
