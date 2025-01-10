@@ -9,5 +9,5 @@ class OfflineWorkoutRoutineRepository(private val workoutRoutineDao: WorkoutRout
 
     override suspend fun insertWorkoutRoutine(workoutRoutine: WorkoutRoutine) = workoutRoutineDao.insert(workoutRoutine)
     override suspend fun updateWorkoutRoutine(workoutRoutine: WorkoutRoutine) = workoutRoutineDao.update(workoutRoutine)
-    override suspend fun deleteWorkoutroutine(workoutRoutine: WorkoutRoutine) = workoutRoutineDao.delete(workoutRoutine)
+    override suspend fun deleteWorkoutRoutine(workoutRoutine: WorkoutRoutine) = workoutRoutineDao.delete(workoutRoutine)
 }

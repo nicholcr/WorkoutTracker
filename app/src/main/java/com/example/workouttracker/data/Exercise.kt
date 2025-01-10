@@ -1,6 +1,6 @@
 package com.example.workouttracker.data
 
-class Exercise(
+data class Exercise(
     val name: String,
-    val sets: List<Set>
+    val sets: Int
 )

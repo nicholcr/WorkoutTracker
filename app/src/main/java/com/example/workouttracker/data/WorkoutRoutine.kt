@@ -8,5 +8,5 @@ data class WorkoutRoutine(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
     val name: String,
-    val exercises: List<Exercise>
+    val exerciseList: ExerciseList
 )

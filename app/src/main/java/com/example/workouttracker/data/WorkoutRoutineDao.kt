@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface WorkoutRoutineDao {
 
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(workoutRoutine: WorkoutRoutine)
 
     @Update
@@ -20,9 +20,15 @@ interface WorkoutRoutineDao {
     @Delete
     suspend fun delete(workoutRoutine: WorkoutRoutine)
 
-    @Query("SELECT * from workoutroutines WHERE id = :id")
+    @Query("SELECT * from workoutroutine WHERE id = :id")
     fun getWorkoutRoutine(id: Int): Flow<WorkoutRoutine>
 
-    @Query("SELECT * from workoutroutines ORDER BY name ASC")
+    @Query("SELECT * from workoutroutine ORDER BY name ASC")
     fun getAllWorkoutRoutines(): Flow<List<WorkoutRoutine>>
+
+    @Query("SELECT * FROM workoutroutine WHERE id = :id")
+    suspend fun getWorkoutRoutineById(id: Int): WorkoutRoutine?
+
+    @Query("SELECT * FROM workoutroutine WHERE name LIKE :searchQuery ORDER BY name ASC")
+    fun searchWorkoutRoutines(searchQuery: String): Flow<List<WorkoutRoutine>>
 }
