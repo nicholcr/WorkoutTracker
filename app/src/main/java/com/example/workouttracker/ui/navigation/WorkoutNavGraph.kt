@@ -15,6 +15,8 @@ import com.example.workouttracker.workout.EditWorkoutRoutineDestination
 import com.example.workouttracker.workout.EditWorkoutRoutineScreen
 import com.example.workouttracker.workout.WorkoutRoutineDetailsDestination
 import com.example.workouttracker.workout.WorkoutRoutineDetailsScreen
+import com.example.workouttracker.workout.WorkoutRoutineListDestination
+import com.example.workouttracker.workout.WorkoutRoutineListScreen
 
 @Composable
 fun WorkoutNavHost(
@@ -28,8 +30,13 @@ fun WorkoutNavHost(
     ) {
         composable(route = WorkoutHomeDestination.route) {
             WorkoutHomeScreen(
-                navigateToAddRoutine = { navController.navigate(AddWorkoutRoutineDestination.route) },
+                navigateToWorkoutRoutineList = { navController.navigate(AddWorkoutRoutineDestination.route) },
                 navigateToRoutineUpdate = { navController.navigate("${WorkoutRoutineDetailsDestination.route}/${it}") }
+            )
+        }
+        composable(route = WorkoutRoutineListDestination.route) {
+            WorkoutRoutineListScreen(
+                navigateToAddRoutine = { navController.navigate(AddWorkoutRoutineDestination.route) },
             )
         }
         composable(route = AddWorkoutRoutineDestination.route) {

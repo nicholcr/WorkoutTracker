@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">WorkoutTracker</string>
-    <string name="workout_routine_list">Workout Routine List</string>
+    <string name="workout_routine_list_title">Workout Routine List</string>
     <string name="back_button">Back</string>
     <string name="add_workout_routine_title">Add Workout Routine</string>
     <string name="workout_routine_name_req">Workout Routine Name</string>

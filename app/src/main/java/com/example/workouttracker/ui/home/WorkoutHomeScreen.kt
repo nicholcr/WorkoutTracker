@@ -30,6 +30,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.workouttracker.R
 import com.example.workouttracker.WorkoutTopAppBar
+import com.example.workouttracker.data.Exercise
+import com.example.workouttracker.data.ExerciseList
 import com.example.workouttracker.data.WorkoutRoutine
 import com.example.workouttracker.ui.navigation.NavigationDestination
 import com.example.workouttracker.ui.theme.WorkoutTrackerTheme
@@ -42,7 +44,7 @@ object WorkoutHomeDestination : NavigationDestination {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun WorkoutHomeScreen(
-    navigateToAddRoutine: () -> Unit,
+    navigateToWorkoutRoutineList: () -> Unit,
     navigateToRoutineUpdate: (Int) -> Unit,
     modifier: Modifier = Modifier
 ) {
@@ -60,7 +62,7 @@ fun WorkoutHomeScreen(
 
         floatingActionButton = {
             FloatingActionButton(
-                onClick = navigateToAddRoutine,
+                onClick = navigateToWorkoutRoutineList,
                 shape = MaterialTheme.shapes.medium,
                 modifier = Modifier.padding(dimensionResource(id = R.dimen.padding_large))
             ) {
@@ -153,9 +155,12 @@ private fun WorkoutRoutineItem(
 @Preview(showBackground = true)
 @Composable
 fun WorkoutHomeBodyPreview() {
+    val exercise1 = Exercise("Bench Press", 5)
+    val exercise2 = Exercise("Overhead Press", 3)
+    val exercises = ExerciseList(listOf(exercise1, exercise2))
     WorkoutTrackerTheme {
         WorkoutHomeBody(listOf(
-            WorkoutRoutine(1, "Reddit Push A", listOf())
+            WorkoutRoutine(1, "Reddit Push A", exercises)
         ), onWorkoutRoutineClick = {})
     }
 }
@@ -171,9 +176,12 @@ fun WorkoutHomeBodyEmptyListPreview() {
 @Preview(showBackground = true)
 @Composable
 fun WorkoutRoutineItemPreview() {
+    val exercise1 = Exercise("Bench Press", 5)
+    val exercise2 = Exercise("Overhead Press", 3)
+    val exercises = ExerciseList(listOf(exercise1, exercise2))
     WorkoutTrackerTheme {
         WorkoutRoutineItem(
-            WorkoutRoutine(1, "Reddit Push A", listOf())
+            WorkoutRoutine(1, "Reddit Push A", exercises)
         )
     }
 }
